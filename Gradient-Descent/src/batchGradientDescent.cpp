@@ -31,7 +31,7 @@ std::string help_msg = "-h or --help\n"
 "-i [inputFileName] or --input [inputFileName]\n"
 "  To specify intput file name\n"
 "-o [outputFileName] or --output [outputFileName]\n"
-"  To specify output file name, default - gradientDecent_Output_[time].txt\n"
+"  To specify output file name, default - batchGradientDecent_Output_[time].txt\n"
 "-r [true/false] or --random [true/false] \n"
 "  To specify whether to initialize the variables to random values or 0, default - true\n"
 "-n [true/false] or --normalize [true/false] \n"
@@ -365,7 +365,7 @@ int main(int argc, char *argv[]) {
 	std::vector<sample<double> > inputSampleData;
 	srand(time(NULL));
 	if (argc == 1) {
-		std::cerr << "Use ./gradientDescent --help for more options" << std::endl;
+		std::cerr << "Use ./batchGradientDescent --help for more options" << std::endl;
 		return -1;
 	}
 	// Read command line arguments
@@ -379,7 +379,7 @@ int main(int argc, char *argv[]) {
 		ss << static_cast<long long>(stamp->tm_year + 1900) << "_" << static_cast<long long>(stamp->tm_mon + 1) << "_"
 			<< static_cast<long long>(stamp->tm_mday) << "_" << static_cast<long long>(stamp->tm_hour) << "."
 			<< static_cast<long long>(stamp->tm_min) << "." << static_cast<long long>(stamp->tm_sec);
-		outputFileName = "gradientDecent_Output_" + ss.str() + ".txt";
+		outputFileName = "batchGradientDecent_Output_" + ss.str() + ".txt";
 	}
 	// Open input file
 	source.open(inputFileName.c_str());
