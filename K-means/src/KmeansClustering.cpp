@@ -94,7 +94,6 @@ void readCommandLine(int argc, char *argv[]) {
         }
         else if (strcmp(argv[i], "-k") == 0 || strcmp(argv[i], "--clusters") == 0) {
             numOfClusters = atoi(argv[i + 1]);
-            std::cout << numOfClusters << std::endl;
             i++;
         }
         else if (strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--help") == 0) {
@@ -439,7 +438,6 @@ void openFile()  {
         Clustering_Basic_Destination.open(Clustering_Basic_OutFileName.c_str());
         if (!Cluster_Center_Basic_Destination || !Clustering_Basic_Destination)
             std::cerr << "Error: Unable to open one of the output file" << '\n';
-
     }
     else {
         if (!userOutputFileName){
